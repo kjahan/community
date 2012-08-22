@@ -1,0 +1,10 @@
+Community detection for weighted graphs
+=======================================
+Input: 
+Graph G that we want to identify its communities. See graph.txt as a sample of the input graph style. It's basicall a csv file where each line is represented by a triple such as: 
+
+u,v,w 
+
+The above line basically means that there is an edge between nodes u and v whose weight is w. The lowest id should be zero and the nodes ids increase.
+
+For any question: contact me at k.jahanbakhsh@gmail.com
