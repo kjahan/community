@@ -7,4 +7,6 @@ u,v,w
 
 The above line basically means that there is an edge between nodes u and v whose weight is w. The lowest id should be zero and the nodes ids increase.
 
-For any question: contact me at k.jahanbakhsh@gmail.com
+For running this code you need to install NetworkX & Matplolib libraries.
+
+If you have any question, contact me @ k.jahanbakhsh@gmail.com
