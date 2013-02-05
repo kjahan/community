@@ -9,4 +9,8 @@ The above line basically means that there is an edge between nodes u and v whose
 
 For running this code you need to install NetworkX & Matplolib libraries.
 
-If you have any question, contact me @ k.jahanbakhsh@gmail.com
+You can find the details of Girvan-Newman algorithm from the following link: 
+
+http://www.csc.uvic.ca/~jahan/codes/cmty.html
+
+If you have any questions about this code, contact me @ k.jahanbakhsh@gmail.com
