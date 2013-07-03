@@ -5,17 +5,19 @@ A weighted graph G. See graph.txt as a sample for the input graph format. It's a
 
 u,v,w 
 
-The above line says that there is an edge between nodes u and v with positive weight w. The lowest id should be zero and the nodes ids increase.
+The above line specifies that there is an edge between node u and node v with positive weight w. 
+The lowest id should be zero and the nodes ids increase. If you want to used this code for an unweighted graph, 
+simply set the weight parameter equal to one in each input line.
 
 Output:
 This code runs Girvan-Newman algorithm and returns a list of detected community with maximum modularity.
 
 Dependencies:
-For running the python script you need to install NetworkX & Matplolib libraries.
+For running the python code you need to install NetworkX & Matplolib libraries.
 
 Girvan-Newman Algorithm Description:
 You can find the details of Girvan-Newman algorithm from the following link: 
 
 http://www.kazemjahanbakhsh.com/codes/cmty.html
 
-If you have any questions about this code, contact me @ k.jahanbakhsh@gmail.com
+If you have any question about the code, contact me @ k.jahanbakhsh@gmail.com
