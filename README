@@ -13,11 +13,15 @@ Output:
 This code runs Girvan-Newman algorithm and returns a list of detected community with maximum modularity.
 
 Dependencies:
-For running the python code you need to install NetworkX & Matplolib libraries.
+For running the python code you need to install NetworkX package. Check link below for more details:
+http://networkx.github.io/
 
 Girvan-Newman Algorithm Description:
 You can find the details of Girvan-Newman algorithm from the following link: 
 
 http://www.kazemjahanbakhsh.com/codes/cmty.html
+
+How to run the Python script:
+python cmty.py graph.txt
 
 If you have any question about the code, contact me @ k.jahanbakhsh@gmail.com
