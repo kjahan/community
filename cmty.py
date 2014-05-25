@@ -38,7 +38,7 @@ def CmtyGirvanNewmanStep(G):
 def _GirvanNewmanGetModularity(G, deg_, m_):
     New_A = nx.adj_matrix(G)
     New_deg = {}
-    New_deg = UpdateDeg(New_A)
+    New_deg = UpdateDeg(New_A, G.nodes())
     #Let's compute the Q
     comps = nx.connected_components(G)    #list of components    
     print 'no of comp: %d' % len(comps)
@@ -54,14 +54,12 @@ def _GirvanNewmanGetModularity(G, deg_, m_):
     #print "Modularity: %f" % Mod
     return Mod
 
-def UpdateDeg(A):
+def UpdateDeg(A, nodes):
     deg_dict = {}
     n = len(A)
+    B = A.sum(axis = 1)
     for i in range(n):
-        deg = 0.0
-        for j in range(n):
-            deg += A[i,j]
-        deg_dict[i] = deg
+        deg_dict[nodes[i]] = B[i, 0]
     return deg_dict
 
 #run GirvanNewman algorithm and find the best community split by maximizing modularity measure
@@ -94,6 +92,9 @@ def main(argv):
     G = nx.Graph()  #let's create the graph first
     buildG(G, graph_fn, ',')
 
+    print G.nodes()
+    print G.number_of_nodes()
+    
     n = G.number_of_nodes()    #|V|
     A = nx.adj_matrix(G)    #adjacenct matrix
 
@@ -106,7 +107,7 @@ def main(argv):
 
     #calculate the weighted degree for each node
     Orig_deg = {}
-    Orig_deg = UpdateDeg(A)
+    Orig_deg = UpdateDeg(A, G.nodes())
 
     #run Newman alg
     runGirvanNewman(G, Orig_deg, m_)
