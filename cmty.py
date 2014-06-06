@@ -14,23 +14,20 @@ def buildG(G, file_, delimiter_):
         if float(line[2]) != 0.0:
             G.add_edge(int(line[0]),int(line[1]),weight=float(line[2]))
 
-#Keep removing edges from Graph until one of the connected components of Graph splits into two.
+#keep removing edges from Graph until one of the connected components of Graph splits into two
 #compute the edge betweenness
 def CmtyGirvanNewmanStep(G):
     #print "call CmtyGirvanNewmanStep"
     init_ncomp = nx.number_connected_components(G)    #no of components
     ncomp = init_ncomp
     while ncomp <= init_ncomp:
-        bw = nx.edge_betweenness_centrality(G)    #edge betweenness for G
+        bw = nx.edge_betweenness_centrality(G, weight='weight')    #edge betweenness for G
         #find the edge with max centrality
         max_ = 0.0
         #find the edge with the highest centrality and remove all of them if there is more than one!
+        max_ = max(bw.values()) 
         for k, v in bw.iteritems():
-            _BW = float(v)/float(G[k[0]][k[1]]['weight'])    #weighted version of betweenness    
-            if _BW >= max_:
-                max_ = _BW
-        for k, v in bw.iteritems():
-            if float(v)/float(G[k[0]][k[1]]['weight']) == max_:
+            if float(v) == max_:
                 G.remove_edge(k[0],k[1])    #remove the central edge
         ncomp = nx.number_connected_components(G)    #recalculate the no of components
 
