@@ -23,9 +23,8 @@ def CmtyGirvanNewmanStep(G):
     while ncomp <= init_ncomp:
         bw = nx.edge_betweenness_centrality(G, weight='weight')    #edge betweenness for G
         #find the edge with max centrality
-        max_ = 0.0
+        max_ = max(bw.values())
         #find the edge with the highest centrality and remove all of them if there is more than one!
-        max_ = max(bw.values()) 
         for k, v in bw.iteritems():
             if float(v) == max_:
                 G.remove_edge(k[0],k[1])    #remove the central edge
