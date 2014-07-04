@@ -24,4 +24,4 @@ http://www.kazemjahanbakhsh.com/codes/cmty.html
 How to run the Python script:
 python cmty.py graph.txt
 
-If you have any question about the code, contact me @ k.jahanbakhsh@gmail.com
+If you have any question about the code, contact me @ <b>k DOT jahanbakhsh AT gmail DOT com</b>.
