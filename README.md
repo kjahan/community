@@ -1,5 +1,6 @@
-Community detection for weighted graphs
-=======================================
+Graphs Community Detection
+==========================
+
 ## Input
  
 A weighted graph G. See graph.txt as a sample for the input graph format. It's a csv file where each line has the following format: 
