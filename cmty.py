@@ -52,7 +52,7 @@ def _GirvanNewmanGetModularity(G, deg_, m_):
 
 def UpdateDeg(A, nodes):
     deg_dict = {}
-    n = len(A)
+    n = len(nodes)  #len(A) ---> some ppl get issues when trying len() on sparse matrixes!
     B = A.sum(axis = 1)
     for i in range(n):
         deg_dict[nodes[i]] = B[i, 0]
