@@ -11,8 +11,13 @@ def buildG(G, file_, delimiter_):
     #reader = csv.reader(open("/home/kazem/Data/UCI/karate.txt"), delimiter=" ")
     reader = csv.reader(open(file_), delimiter=delimiter_)
     for line in reader:
-        if float(line[2]) != 0.0:
-            G.add_edge(int(line[0]),int(line[1]),weight=float(line[2]))
+        if len(line) > 2:
+            if float(line[2]) != 0.0:
+                #line format: u,v,w
+                G.add_edge(int(line[0]),int(line[1]),weight=float(line[2]))
+        else:
+            #line format: u,v
+            G.add_edge(int(line[0]),int(line[1]),weight=1.0)
 
 #keep removing edges from Graph until one of the connected components of Graph splits into two
 #compute the edge betweenness
