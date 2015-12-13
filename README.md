@@ -3,27 +3,27 @@ Graphs Community Detection
 
 ## Input
  
-A weighted graph G. See graph.txt as a sample for the input graph format. It's a csv file where each line has the following format: 
+A weighted graph G. See graph.txt file as a sample for the input graph format. It's a CSV file where each line has the following format: 
 
 	u,v,w 
 
-The above line specifies that there is an edge between node u and node v with positive weight w. 
-The lowest id should be zero and the nodes ids increase. If you want to used this code for an unweighted graph, 
-simply set the weight parameter equal to one in each input line.
+Above line specifies that there is an edge between node u and v with positive weight w. 
+The lowest id should be zero and the nodes id's increase. If you want to used this code for an unweighted graph, 
+simply set the weight equal to one on each input line.
 
 ## Output
 
-This code runs Girvan-Newman algorithm and returns a list of detected community with maximum modularity.
+This code runs Girvan-Newman algorithm and returns a list of detected communities with maximum modularity.
 
 ## Dependencies
 
-For running the python code you need to install Python 2.7 and NetworkX package on your machine. Check link below for more details:
+For running the python code, you need to install Python 2.7 and NetworkX package on your machine. Check link below for more details:
 
-	http://networkx.github.io/
+	https://networkx.github.io/documentation/latest/install.html
 
 ## Girvan-Newman Algorithm Description
 
-You can find the details of Girvan-Newman algorithm from the following link: 
+You can find the details for how Girvan-Newman algorithm works from the following link: 
 
 	http://www.kazemjahanbakhsh.com/codes/cmty.html
 
