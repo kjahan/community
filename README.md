@@ -1,5 +1,5 @@
-Graphs Community Detection
-==========================
+Detecting Communities in Weighted Graphs
+========================================
 
 ## Input
  
