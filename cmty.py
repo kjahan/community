@@ -5,6 +5,8 @@ import csv
 import random as rand
 import sys
 
+_DEBUG_ = False
+
 #this method just reads the graph structure from the file
 def buildG(G, file_, delimiter_):
     #construct the weighted version of the contact graph from cgraph.dat file
@@ -22,7 +24,8 @@ def buildG(G, file_, delimiter_):
 #keep removing edges from Graph until one of the connected components of Graph splits into two
 #compute the edge betweenness
 def CmtyGirvanNewmanStep(G):
-    #print "call CmtyGirvanNewmanStep"
+    if _DEBUG_:
+        print "Calling CmtyGirvanNewmanStep"
     init_ncomp = nx.number_connected_components(G)    #no of components
     ncomp = init_ncomp
     while ncomp <= init_ncomp:
@@ -42,7 +45,7 @@ def _GirvanNewmanGetModularity(G, deg_, m_):
     New_deg = UpdateDeg(New_A, G.nodes())
     #Let's compute the Q
     comps = nx.connected_components(G)    #list of components    
-    print 'no of comp: %d' % nx.number_connected_components(G)
+    print 'No of communities in decomposed G: %d' % nx.number_connected_components(G)
     Mod = 0    #Modularity of a given partitionning
     for c in comps:
         EWC = 0    #no of edges within a community
@@ -52,7 +55,8 @@ def _GirvanNewmanGetModularity(G, deg_, m_):
             RE += deg_[u]        #count the probability of a random edge
         Mod += ( float(EWC) - float(RE*RE)/float(2*m_) )
     Mod = Mod/float(2*m_)
-    #print "Modularity: %f" % Mod
+    if _DEBUG_:
+        print "Modularity: %f" % Mod
     return Mod
 
 def UpdateDeg(A, nodes):
@@ -71,19 +75,18 @@ def runGirvanNewman(G, Orig_deg, m_):
     while True:    
         CmtyGirvanNewmanStep(G)
         Q = _GirvanNewmanGetModularity(G, Orig_deg, m_);
-        print "current modularity: %f" % Q
+        print "Modularity of decomposed G: %f" % Q
         if Q > BestQ:
             BestQ = Q
             Bestcomps = nx.connected_components(G)    #Best Split
-            print "comps:"
-            print Bestcomps
+            print "Components:", Bestcomps
         if G.number_of_edges() == 0:
             break
     if BestQ > 0.0:
-        print "Best Q: %f" % BestQ
-        print Bestcomps
+        print "Max modularity (Q): %f" % BestQ
+        print "Graph communities:", Bestcomps
     else:
-        print "Best Q: %f" % BestQ
+        print "Max modularity (Q): %f" % BestQ
 
 def main(argv):
     if len(argv) < 2:
@@ -92,9 +95,10 @@ def main(argv):
     graph_fn = argv[1]
     G = nx.Graph()  #let's create the graph first
     buildG(G, graph_fn, ',')
-
-    print G.nodes()
-    print G.number_of_nodes()
+    
+    if _DEBUG_:
+        print 'G nodes:', G.nodes()
+        print 'G no of nodes:', G.number_of_nodes()
     
     n = G.number_of_nodes()    #|V|
     A = nx.adj_matrix(G)    #adjacenct matrix
@@ -104,7 +108,8 @@ def main(argv):
         for j in range(0,n):
             m_ += A[i,j]
     m_ = m_/2.0
-    print "m: %f" % m_
+    if _DEBUG_:
+        print "m: %f" % m_
 
     #calculate the weighted degree for each node
     Orig_deg = {}
