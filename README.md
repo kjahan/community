@@ -17,7 +17,7 @@ This code runs Girvan-Newman algorithm and returns a list of detected communitie
 
 ## Dependencies
 
-For running the python code, you need to install Python 2.7 and NetworkX package on your machine. Check link below for more details:
+For running the python code, you need to install Python 3 and NetworkX package on your machine. Check link below for more details:
 
 	https://networkx.github.io/documentation/latest/install.html
 
