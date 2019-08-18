@@ -1,4 +1,4 @@
-![Image description](https://c8.alamy.com/comp/KCRNP7/crowded-shopping-street-in-istanbul-turkey-KCRNP7.jpg)
+![Image description](https://thumbs.dreamstime.com/z/inside-big-bazaar-istanbul-turkey-its-decorated-painted-ceiling-walking-people-men-women-around-shops-to-sides-106812125.jpg)
 
 Detecting Communities in Weighted Graphs
 ========================================
