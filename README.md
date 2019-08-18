@@ -1,4 +1,4 @@
-![Image description](https://thumbs.dreamstime.com/z/inside-big-bazaar-istanbul-turkey-its-decorated-painted-ceiling-walking-people-men-women-around-shops-to-sides-106812125.jpg)
+![Image description](http://www.lonelyplanet.com/travel-blog/tip-article/wordpress_uploads/2015/04/Istanbul-Grand-Bazaar_CS.jpg)
 
 Detecting Communities in Weighted Graphs
 ========================================
