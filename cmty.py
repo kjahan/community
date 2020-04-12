@@ -47,7 +47,7 @@ def _GirvanNewmanGetModularity(G, deg_, m_):
     New_deg = UpdateDeg(New_A, G.nodes())
     #Let's compute the Q
     comps = nx.connected_components(G)    #list of components    
-    print('No of communities in decomposed G:', nx.number_connected_components(G))
+    print('No of communities in decomposed G: {}'.format(nx.number_connected_components(G)))
     Mod = 0    #Modularity of a given partitionning
     for c in comps:
         EWC = 0    #no of edges within a community
@@ -58,7 +58,7 @@ def _GirvanNewmanGetModularity(G, deg_, m_):
         Mod += ( float(EWC) - float(RE*RE)/float(2*m_) )
     Mod = Mod/float(2*m_)
     if _DEBUG_:
-        print("Modularity:", Mod)
+        print("Modularity: {}".format(Mod))
     return Mod
 
 
@@ -81,16 +81,16 @@ def runGirvanNewman(G, Orig_deg, m_):
     while True:    
         CmtyGirvanNewmanStep(G)
         Q = _GirvanNewmanGetModularity(G, Orig_deg, m_);
-        print("Modularity of decomposed G:", Q)
+        print("Modularity of decomposed G: {}".format(Q))
         if Q > BestQ:
             BestQ = Q
             Bestcomps = list(nx.connected_components(G))    #Best Split
-            print("Components:", Bestcomps)
+            print("Identified components: {}".format(Bestcomps))
         if G.number_of_edges() == 0:
             break
     if BestQ > 0.0:
-        print("Max modularity (Q):", BestQ)
-        print("Graph communities:", Bestcomps)
+        print("Max modularity found (Q): {} and number of communities: {}".format(BestQ, len(Bestcomps)))
+        print("Graph communities: {}".format(Bestcomps))
     else:
         print("Max modularity (Q):", BestQ)
 
@@ -104,8 +104,7 @@ def main(argv):
     buildG(G, graph_fn, ',')
     
     if _DEBUG_:
-        print('G nodes:', G.nodes())
-        print('G no of nodes:', G.number_of_nodes())
+        print('G nodes: {} & G no of nodes: {}'.format(G.nodes(), G.number_of_nodes()))
     
     n = G.number_of_nodes()    #|V|
     A = nx.adj_matrix(G)    #adjacenct matrix
@@ -116,7 +115,7 @@ def main(argv):
             m_ += A[i,j]
     m_ = m_/2.0
     if _DEBUG_:
-        print("m:", m_)
+        print("m: {}".format(m_))
 
     #calculate the weighted degree for each node
     Orig_deg = {}
