@@ -1,4 +1,4 @@
-![Image description](https://media.gettyimages.com/photos/crowds-of-people-in-tehrans-grand-bazaar-amid-the-covid19-outbreak-in-picture-id1231260202?s=612x612)
+![Image description](https://images.theconversation.com/files/225699/original/file-20180702-116143-1ic135n.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop)
 
 Detecting Communities in Weighted Graphs
 ========================================
