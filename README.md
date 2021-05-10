@@ -1,4 +1,4 @@
-![Image description](https://www.google.com/url?sa=i&url=https%3A%2F%2Ftheconversation.com%2Firans-grand-bazaar-once-a-hotbed-of-revolution-now-a-conservative-power-base-99155&psig=AOvVaw2gU6U1z9d3FFVBLXRxL1Mr&ust=1620713153406000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLDz0JC5vvACFQAAAAAdAAAAABAa)
+![Image description](https://images.theconversation.com/files/225699/original/file-20180702-116143-1ic135n.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop)
 
 Detecting Communities in Weighted Graphs
 ========================================
