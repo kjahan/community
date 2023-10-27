@@ -10,7 +10,7 @@ A weighted graph G. See graph.txt file as a sample for the input graph format. I
 	u,v,w 
 
 Above line specifies that there is an edge between node u and v with positive weight w. 
-The lowest id should be zero and the nodes id's increase. If you want to used this code for an unweighted graph, 
+The lowest id should be zero and the nodes id's increase. If you want to use this code for an unweighted graph, 
 simply set the weight equal to one on each input line.
 
 ## Output
@@ -21,13 +21,13 @@ This code runs Girvan-Newman algorithm and returns a list of detected communitie
 
 For running the python code, you need to install Python 3 and NetworkX package on your machine. Check link below for more details:
 
-	https://networkx.github.io/documentation/latest/install.html
+https://networkx.github.io/documentation/latest/install.html
 
 ## Girvan-Newman Algorithm Description
 
 You can find the details for how Girvan-Newman algorithm works from the following link: 
 
-	http://www.kazemjahanbakhsh.com/codes/cmty.html
+http://www.kazemjahanbakhsh.com/codes/cmty.html
 
 ## How to run Python script
 
